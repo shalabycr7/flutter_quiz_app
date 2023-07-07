@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -7,18 +8,22 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.deepPurple,
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Column(
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Image.asset(
               'assets/images/logo.png',
               height: MediaQuery.of(context).size.height * 0.1,
               width: MediaQuery.of(context).size.width * 0.3,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Image.asset(
               'assets/images/info.png',
               height: MediaQuery.of(context).size.height * 0.2,
@@ -28,8 +33,8 @@ class MyHomePage extends StatelessWidget {
                 width: double.infinity,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40),
                   ),
@@ -37,19 +42,25 @@ class MyHomePage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 16),
-                    const Text(
+                    const SizedBox(height: 35),
+                    Text(
                       'Login',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: .5),
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 25),
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'Username',
+                        hintStyle: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
                         prefixIcon: const Icon(Icons.person),
                         contentPadding: const EdgeInsets.all(15),
                         border: OutlineInputBorder(
@@ -61,6 +72,11 @@ class MyHomePage extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'Password',
+                        hintStyle: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
                         prefixIcon: const Icon(Icons.lock),
                         contentPadding: const EdgeInsets.all(15),
                         border: OutlineInputBorder(
@@ -71,8 +87,9 @@ class MyHomePage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
+                        const Text(
                           'New To Quiz?',
+                          style: TextStyle(color: Colors.grey),
                         ),
                         GestureDetector(
                           onDoubleTap: () {
@@ -83,57 +100,66 @@ class MyHomePage extends StatelessWidget {
                           },
                           child: TextButton(
                             onPressed: () {},
-                            child: Text('Register?'),
                             style: TextButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
                             ),
+                            child: const Text('Register?'),
                           ),
                         ),
                       ],
                     ),
                     Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 75, vertical: 15),
                       width: double.infinity,
                       height: 45,
                       child: ElevatedButton(
                         onPressed: () {},
-                        child: Text(
-                          'Login',
-                          style: TextStyle(fontSize: 22),
-                        ),
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
+                        child: Text(
+                          'Login',
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              fontSize: 22,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 70, vertical: 15),
                       child: Image.asset(
                         'assets/images/print.png',
                         height: MediaQuery.of(context).size.height * 0.07,
                         width: MediaQuery.of(context).size.height * 0.07,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Use Touch ID',
+                      style: TextStyle(color: Colors.grey),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       children: [
                         Checkbox(
                           value: false,
                           onChanged: (value) {},
                         ),
-                        const Text('Remember me'),
-                        Spacer(),
-                        Text(
+                        const Text(
+                          'Remember me',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        const Spacer(),
+                        const Text(
                           'Forgot Password?',
+                          style: TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),
