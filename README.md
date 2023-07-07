@@ -2,15 +2,24 @@
 
 A new flutter quiz app.
 
-## Getting Started
+## Screenshot
 
-This project is a starting point for a Flutter application.
+![app](https://github.com/shalabycr7/flutter_quiz_app/assets/17945581/56f8bd95-1739-4199-95f3-f513340c2462)
 
-A few resources to get you started if this is your first Flutter project:
+## How to use
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+# Clone this repository
+$ git clone https://github.com/shalabycr7/flutter_quiz_app
+
+# Go into the repository
+$ cd flutter_quiz_app
+
+# Install dependencies
+$ flutter packages get
+
+# Run the app
+$ flutter run
+```
