@@ -8,7 +8,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.amber,
+          color: Colors.deepPurple,
         ),
         child: Column(
           children: [
@@ -73,7 +73,6 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         Text(
                           'New To Quiz?',
-                          textAlign: TextAlign.center,
                         ),
                         GestureDetector(
                           onDoubleTap: () {
@@ -112,6 +111,18 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                      child: Image.asset(
+                        'assets/images/print.png',
+                        height: MediaQuery.of(context).size.height * 0.07,
+                        width: MediaQuery.of(context).size.height * 0.07,
+                      ),
+                    ),
+                    Text(
+                      'Use Touch ID',
+                    ),
                     Spacer(),
                     Row(
                       children: [
@@ -120,6 +131,10 @@ class MyHomePage extends StatelessWidget {
                           onChanged: (value) {},
                         ),
                         const Text('Remember me'),
+                        Spacer(),
+                        Text(
+                          'Forgot Password?',
+                        ),
                       ],
                     ),
                   ],
