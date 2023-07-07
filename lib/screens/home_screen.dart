@@ -68,7 +68,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 18),
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'Password',
@@ -88,16 +88,10 @@ class MyHomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         const Text(
-                          'New To Quiz?',
+                          'New To Quizizz?',
                           style: TextStyle(color: Colors.grey),
                         ),
                         GestureDetector(
-                          onDoubleTap: () {
-                            // Handle double tap gesture
-                          },
-                          onLongPress: () {
-                            // Handle long press gesture
-                          },
                           child: TextButton(
                             onPressed: () {},
                             style: TextButton.styleFrom(
@@ -138,7 +132,7 @@ class MyHomePage extends StatelessWidget {
                       child: Image.asset(
                         'assets/images/print.png',
                         height: MediaQuery.of(context).size.height * 0.07,
-                        width: MediaQuery.of(context).size.height * 0.07,
+                        width: MediaQuery.of(context).size.width * 0.2,
                       ),
                     ),
                     const Text(
