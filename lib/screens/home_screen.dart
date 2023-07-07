@@ -151,9 +151,19 @@ class MyHomePage extends StatelessWidget {
                           style: TextStyle(color: Colors.grey),
                         ),
                         const Spacer(),
-                        const Text(
-                          'Forgot Password?',
-                          style: TextStyle(color: Colors.grey),
+                        GestureDetector(
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            child: const Text(
+                              'Forgot Password?',
+                              style: TextStyle(color: Colors.grey),
+                            ),
+                          ),
                         ),
                       ],
                     ),
