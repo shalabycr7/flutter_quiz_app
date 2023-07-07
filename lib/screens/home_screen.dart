@@ -23,7 +23,6 @@ class MyHomePage extends StatelessWidget {
               'assets/images/info.png',
               height: MediaQuery.of(context).size.height * 0.2,
             ),
-            SizedBox(height: 20),
             Expanded(
               child: Container(
                 width: double.infinity,
@@ -69,7 +68,51 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          'New To Quiz?',
+                          textAlign: TextAlign.center,
+                        ),
+                        GestureDetector(
+                          onDoubleTap: () {
+                            // Handle double tap gesture
+                          },
+                          onLongPress: () {
+                            // Handle long press gesture
+                          },
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text('Register?'),
+                            style: TextButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                      width: double.infinity,
+                      height: 45,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Login',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Spacer(),
                     Row(
                       children: [
                         Checkbox(
@@ -78,11 +121,6 @@ class MyHomePage extends StatelessWidget {
                         ),
                         const Text('Remember me'),
                       ],
-                    ),
-                    const SizedBox(height: 16),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Login'),
                     ),
                   ],
                 ),
