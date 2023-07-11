@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuizScreen extends StatelessWidget {
   final String data;
@@ -29,35 +30,38 @@ class QuizScreen extends StatelessWidget {
       body: Container(
         width: app_size.width,
         height: app_size.height,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black,
-            width: 2.0,
-          ),
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('The Olympics are held every how many years'),
-            Divider(),
+            Text(
+              'The Olympics are held every how many years',
+              style: GoogleFonts.roboto(
+                textStyle: const TextStyle(
+                  fontSize: 17,
+                ),
+              ),
+            ),
+            const Divider(),
             Container(
               child: Column(
                 children: [
                   RadioListTile(
-                    title: Text("4 years"),
+                    title: const Text(
+                      "4 years",
+                    ),
                     value: "4 years",
                     groupValue: gender,
                     onChanged: (value) {},
                   ),
                   RadioListTile(
-                    title: Text("3 years"),
+                    title: const Text("3 years"),
                     value: "3 years",
                     groupValue: gender,
                     onChanged: (value) {},
                   ),
                   RadioListTile(
-                    title: Text("2 years"),
+                    title: const Text("2 years"),
                     value: "2 years",
                     groupValue: gender,
                     onChanged: (value) {},
