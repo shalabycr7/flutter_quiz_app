@@ -7,6 +7,9 @@ class QuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var app_size = MediaQuery.of(context).size;
+    String? gender;
+
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
@@ -24,10 +27,44 @@ class QuizScreen extends StatelessWidget {
         ],
       ),
       body: Container(
+        width: app_size.width,
+        height: app_size.height,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.black,
+            width: 2.0,
+          ),
+        ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(data),
+            Text('The Olympics are held every how many years'),
+            Divider(),
+            Container(
+              child: Column(
+                children: [
+                  RadioListTile(
+                    title: Text("4 years"),
+                    value: "4 years",
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  ),
+                  RadioListTile(
+                    title: Text("3 years"),
+                    value: "3 years",
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  ),
+                  RadioListTile(
+                    title: Text("2 years"),
+                    value: "2 years",
+                    groupValue: gender,
+                    onChanged: (value) {},
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
