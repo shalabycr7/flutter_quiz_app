@@ -9,7 +9,7 @@ class QuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var app_size = MediaQuery.of(context).size;
+    var appSize = MediaQuery.of(context).size;
     String? gender;
 
     return SafeArea(
@@ -29,8 +29,8 @@ class QuizScreen extends StatelessWidget {
         ],
       ),
       body: Container(
-        width: app_size.width,
-        height: app_size.height,
+        width: appSize.width,
+        height: appSize.height,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,8 +41,7 @@ class QuizScreen extends StatelessWidget {
                   'The Olympics are held every how many years',
                   style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
-                      fontSize: 17,
-                    ),
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const Divider(),
@@ -74,7 +73,7 @@ class QuizScreen extends StatelessWidget {
             ),
             const Spacer(),
             Container(
-              width: app_size.width * 1 / 3,
+              width: appSize.width * 1 / 3,
               height: 45,
               child: ElevatedButton(
                 onPressed: () {

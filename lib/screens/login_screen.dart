@@ -7,21 +7,22 @@ class MyLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var app_size = MediaQuery.of(context).size;
+    final appSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         body: Container(
-          width: app_size.width,
-          height: app_size.height,
+          width: appSize.width,
+          height: appSize.height,
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 78, 84, 200),
-              Color.fromARGB(255, 67, 72, 169),
-            ],
-          )),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 78, 84, 200),
+                Color.fromARGB(255, 67, 72, 169),
+              ],
+            ),
+          ),
           child: Column(
             children: [
               const SizedBox(height: 20),
@@ -31,9 +32,13 @@ class MyLoginPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.3,
               ),
               const SizedBox(height: 10),
-              Image.asset(
-                'assets/images/info.png',
-                height: MediaQuery.of(context).size.height * 0.2,
+              const Icon(
+                Icons.fact_check_rounded,
+                size: 80,
+                color: Colors.white,
+              ),
+              const SizedBox(
+                height: 30,
               ),
               Expanded(
                 child: Container(
@@ -54,9 +59,10 @@ class MyLoginPage extends StatelessWidget {
                         'Login',
                         style: GoogleFonts.roboto(
                           textStyle: const TextStyle(
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: .5),
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: .5,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 25),
@@ -140,13 +146,14 @@ class MyLoginPage extends StatelessWidget {
                         ),
                       ),
                       Container(
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 70, vertical: 15),
-                          child: const Icon(
-                            Icons.fingerprint,
-                            size: 65,
-                            color: Colors.blue,
-                          )),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 70, vertical: 15),
+                        child: const Icon(
+                          Icons.fingerprint,
+                          size: 65,
+                          color: Colors.blue,
+                        ),
+                      ),
                       const Text(
                         'Use Touch ID',
                         style: TextStyle(color: Colors.grey),

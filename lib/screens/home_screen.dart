@@ -7,21 +7,22 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         body: Container(
           width: size.width,
           height: size.height,
           decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 78, 84, 200),
-              Color.fromARGB(255, 67, 72, 169),
-            ],
-          )),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color.fromARGB(255, 78, 84, 200),
+                Color.fromARGB(255, 67, 72, 169),
+              ],
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -33,20 +34,24 @@ class MyHomePage extends StatelessWidget {
                   width: size.width * 0.3,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Text(
-                  'ITI Quiz App',
-                  style: GoogleFonts.roboto(
-                    textStyle:
-                        const TextStyle(fontSize: 22, color: Colors.white),
-                  ),
+              const SizedBox(height: 20),
+              Text(
+                'ITI Quiz App',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
               ),
+              const SizedBox(height: 10),
               Text(
                 'We enjoy spreading knowledge',
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(fontSize: 20, color: Colors.white),
+                  textStyle: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white),
                 ),
               ),
               const Spacer(),
@@ -71,9 +76,7 @@ class MyHomePage extends StatelessWidget {
                   child: Text(
                     'Login',
                     style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        fontSize: 22,
-                      ),
+                      textStyle: const TextStyle(fontSize: 22),
                     ),
                   ),
                 ),

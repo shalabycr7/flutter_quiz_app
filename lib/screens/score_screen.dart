@@ -16,7 +16,7 @@ class ScorePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/congratulate.png"),
               ),
