@@ -8,72 +8,76 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        width: size.width,
-        height: size.height,
-        decoration: const BoxDecoration(
-          color: Colors.deepPurple,
-          image: DecorationImage(
-            image: AssetImage("assets/images/background.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: Image.asset(
-                'assets/images/logo.png',
-                height: size.height * 0.1,
-                width: size.width * 0.3,
-              ),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          width: size.width,
+          height: size.height,
+          decoration: const BoxDecoration(
+            color: Colors.deepPurple,
+            image: DecorationImage(
+              image: AssetImage("assets/images/background.jpg"),
+              fit: BoxFit.cover,
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                'ITI Quiz App',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(fontSize: 22, color: Colors.white),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(50.0),
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  height: size.height * 0.1,
+                  width: size.width * 0.3,
                 ),
               ),
-            ),
-            Text(
-              'We enjoy spreading knowledge',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(fontSize: 20, color: Colors.white),
-              ),
-            ),
-            const Spacer(),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 75, vertical: 30),
-              width: double.infinity,
-              height: 45,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyLoginPage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  'ITI Quiz App',
+                  style: GoogleFonts.roboto(
+                    textStyle:
+                        const TextStyle(fontSize: 22, color: Colors.white),
                   ),
                 ),
-                child: Text(
-                  'Login',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      fontSize: 22,
+              ),
+              Text(
+                'We enjoy spreading knowledge',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+              const Spacer(),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 75, vertical: 30),
+                width: double.infinity,
+                height: 45,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyLoginPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'Login',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        fontSize: 22,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
