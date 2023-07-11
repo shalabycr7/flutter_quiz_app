@@ -14,11 +14,14 @@ class MyLoginPage extends StatelessWidget {
           width: app_size.width,
           height: app_size.height,
           decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/background.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
+              gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 78, 84, 200),
+              Color.fromARGB(255, 67, 72, 169),
+            ],
+          )),
           child: Column(
             children: [
               const SizedBox(height: 20),

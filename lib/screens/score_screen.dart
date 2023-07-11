@@ -1,0 +1,100 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'categories_screen.dart';
+
+class ScorePage extends StatelessWidget {
+  const ScorePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var appSize = MediaQuery.of(context).size;
+
+    var user = 'Ahmed';
+    var score = '1/10';
+
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/congratulate.png"),
+              ),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color.fromARGB(255, 78, 84, 200),
+                  Color.fromARGB(255, 67, 72, 169),
+                ],
+              )),
+          width: appSize.width,
+          height: appSize.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Hello, ',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    user,
+                    style: GoogleFonts.roboto(
+                      textStyle:
+                          const TextStyle(fontSize: 30, color: Colors.white),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Text(
+                'Your score is: $score',
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    fontSize: 25,
+                  ),
+                ),
+              ),
+              Container(
+                width: appSize.width * 1 / 3,
+                height: 45,
+                margin: const EdgeInsets.symmetric(vertical: 80),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CategoriesPage()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                    'Reset Quiz',
+                    style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

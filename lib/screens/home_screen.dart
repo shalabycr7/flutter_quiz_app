@@ -14,12 +14,14 @@ class MyHomePage extends StatelessWidget {
           width: size.width,
           height: size.height,
           decoration: const BoxDecoration(
-            color: Colors.deepPurple,
-            image: DecorationImage(
-              image: AssetImage("assets/images/background.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
+              gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Color.fromARGB(255, 78, 84, 200),
+              Color.fromARGB(255, 67, 72, 169),
+            ],
+          )),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

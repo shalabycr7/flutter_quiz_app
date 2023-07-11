@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/screens/login_screen.dart';
+import 'package:quiz_app/screens/score_screen.dart';
 
 class QuizScreen extends StatelessWidget {
   final String data;
@@ -35,50 +35,52 @@ class QuizScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'The Olympics are held every how many years',
-              style: GoogleFonts.roboto(
-                textStyle: const TextStyle(
-                  fontSize: 17,
-                ),
-              ),
-            ),
-            const Divider(),
-            Container(
-              child: Column(
-                children: [
-                  RadioListTile(
-                    title: const Text(
-                      "4 years",
+            Column(
+              children: [
+                Text(
+                  'The Olympics are held every how many years',
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      fontSize: 17,
                     ),
-                    value: "4 years",
-                    groupValue: gender,
-                    onChanged: (value) {},
                   ),
-                  RadioListTile(
-                    title: const Text("3 years"),
-                    value: "3 years",
-                    groupValue: gender,
-                    onChanged: (value) {},
-                  ),
-                  RadioListTile(
-                    title: const Text("2 years"),
-                    value: "2 years",
-                    groupValue: gender,
-                    onChanged: (value) {},
-                  )
-                ],
-              ),
+                ),
+                const Divider(),
+                Column(
+                  children: [
+                    RadioListTile(
+                      title: const Text(
+                        "4 years",
+                      ),
+                      value: "4 years",
+                      groupValue: gender,
+                      onChanged: (value) {},
+                    ),
+                    RadioListTile(
+                      title: const Text("3 years"),
+                      value: "3 years",
+                      groupValue: gender,
+                      onChanged: (value) {},
+                    ),
+                    RadioListTile(
+                      title: const Text("2 years"),
+                      value: "2 years",
+                      groupValue: gender,
+                      onChanged: (value) {},
+                    )
+                  ],
+                ),
+              ],
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: app_size.width * 1 / 3,
+              height: 45,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyLoginPage()),
+                    MaterialPageRoute(builder: (context) => const ScorePage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
