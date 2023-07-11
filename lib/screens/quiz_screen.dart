@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app/screens/login_screen.dart';
 
 class QuizScreen extends StatelessWidget {
   final String data;
@@ -30,7 +31,7 @@ class QuizScreen extends StatelessWidget {
       body: Container(
         width: app_size.width,
         height: app_size.height,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -68,7 +69,33 @@ class QuizScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            Spacer(),
+            Container(
+              width: app_size.width * 1 / 3,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyLoginPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: Text(
+                  'Submit',
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
