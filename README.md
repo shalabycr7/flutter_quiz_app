@@ -1,4 +1,4 @@
-# quiz_app
+# quizizz
 
 A new flutter quiz app.
 

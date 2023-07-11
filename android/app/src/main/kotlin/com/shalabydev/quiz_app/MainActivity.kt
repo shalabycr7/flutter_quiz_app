@@ -1,4 +1,4 @@
-package com.shalabydev.quiz_app
+package com.shalabydev.quizizz
 
 import io.flutter.embedding.android.FlutterActivity
 

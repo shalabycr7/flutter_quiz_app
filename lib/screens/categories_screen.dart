@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz_app/screens/quiz_screen.dart';
+import 'package:quizizz/screens/quiz_screen.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});
