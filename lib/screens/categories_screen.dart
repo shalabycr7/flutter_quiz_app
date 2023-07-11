@@ -7,99 +7,115 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var app_size = MediaQuery.of(context).size;
-
-    return SafeArea(
-        child: Scaffold(
-      body: Container(
-          width: app_size.width,
-          height: app_size.height,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/background.jpg"),
-              fit: BoxFit.cover,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Categories'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.black,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/sports.jpg"),
+                  opacity: 0.5,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              margin: const EdgeInsets.all(10),
+              child: Center(
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const QuizScreen('Sports')),
+                      );
+                    },
+                    child: Text(
+                      'Sports',
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )),
+              ),
             ),
           ),
-          child: ListView(
-            children: [
-              Container(
-                height: app_size.height * 1 / 3,
-                decoration: const BoxDecoration(
-                  color: Colors.red,
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.black,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/history_panel.jpg"),
+                  opacity: 0.5,
+                  fit: BoxFit.cover,
                 ),
-                child: Center(
-                    child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => QuizScreen('Sports Test')),
-                    );
-                  },
-                  child: Text(
-                    'Sports Test',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: .5),
-                    ),
-                  ),
-                )),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
-              Container(
-                height: app_size.height * 1 / 3,
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Center(
-                    child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => QuizScreen('History Test')),
-                    );
-                  },
-                  child: Text(
-                    'History Test',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: .5),
-                    ),
-                  ),
-                )),
+              margin: const EdgeInsets.all(10),
+              child: Center(
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const QuizScreen('History')),
+                      );
+                    },
+                    child: Text(
+                      'History',
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )),
               ),
-              Container(
-                height: app_size.height * 1 / 3,
-                decoration: const BoxDecoration(
-                  color: Colors.yellow,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.black,
+                image: DecorationImage(
+                  image: AssetImage("assets/images/general_panel.jpg"),
+                  opacity: 0.5,
+                  fit: BoxFit.cover,
                 ),
-                child: Center(
-                    child: GestureDetector(
+              ),
+              margin: const EdgeInsets.all(10),
+              child: Center(
+                child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              QuizScreen('General Knowledge Test')),
+                              const QuizScreen('General Knowledge')),
                     );
                   },
                   child: Text(
-                    'General Knowledge Test',
+                    'General Knowledge',
                     style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
-                          fontSize: 35,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: .5),
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
-                )),
+                ),
               ),
-            ],
-          )),
-    ));
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
