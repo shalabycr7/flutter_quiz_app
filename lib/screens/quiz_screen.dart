@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizizz/screens/score_screen.dart';
+import 'package:quizizz/shared/question_widgets.dart';
 
 class QuizScreen extends StatelessWidget {
-  final String data;
+  String data;
 
-  const QuizScreen(this.data, {super.key});
+  QuizScreen({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     var appSize = MediaQuery.of(context).size;
-    String? gender;
 
     return SafeArea(
         child: Scaffold(
@@ -35,44 +35,11 @@ class QuizScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Column(
-              children: [
-                Text(
-                  'The Olympics are held every how many years',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                const Divider(),
-                Column(
-                  children: [
-                    RadioListTile(
-                      title: const Text(
-                        "4 years",
-                      ),
-                      value: "4 years",
-                      groupValue: gender,
-                      onChanged: (value) {},
-                    ),
-                    RadioListTile(
-                      title: const Text("3 years"),
-                      value: "3 years",
-                      groupValue: gender,
-                      onChanged: (value) {},
-                    ),
-                    RadioListTile(
-                      title: const Text("2 years"),
-                      value: "2 years",
-                      groupValue: gender,
-                      onChanged: (value) {},
-                    )
-                  ],
-                ),
-              ],
+            QuestionWidget(
+              question: 'The Olympics are held every how many years',
             ),
             const Spacer(),
-            Container(
+            SizedBox(
               width: appSize.width * 1 / 3,
               height: 45,
               child: ElevatedButton(

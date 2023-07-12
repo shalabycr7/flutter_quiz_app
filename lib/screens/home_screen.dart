@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizizz/global/gradient_decoration.dart';
+import 'package:quizizz/global/round_button_decoration.dart';
 import 'package:quizizz/screens/login_screen.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -13,16 +15,7 @@ class MyHomePage extends StatelessWidget {
         body: Container(
           width: size.width,
           height: size.height,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 78, 84, 200),
-                Color.fromARGB(255, 67, 72, 169),
-              ],
-            ),
-          ),
+          decoration: blueGradient,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -68,15 +61,12 @@ class MyHomePage extends StatelessWidget {
                           builder: (context) => const MyLoginPage()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
+                  style: roundButtonDecor(Colors.white),
                   child: Text(
-                    'Login',
+                    'Start',
                     style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(fontSize: 22),
+                      textStyle:
+                          const TextStyle(fontSize: 22, color: Colors.black),
                     ),
                   ),
                 ),

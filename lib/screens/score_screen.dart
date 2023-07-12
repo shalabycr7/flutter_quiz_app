@@ -34,34 +34,37 @@ class ScorePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Hello, ',
-                    style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
-                        fontSize: 30,
+              RichText(
+                text: TextSpan(
+                  text: 'Hello ',
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 215, 215, 215),
+                    fontSize: 20,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: user,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
-                  ),
-                  Text(
-                    user,
-                    style: GoogleFonts.roboto(
-                      textStyle:
-                          const TextStyle(fontSize: 30, color: Colors.white),
-                      fontWeight: FontWeight.bold,
+                    const TextSpan(
+                      text: ', Your ',
                     ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Your score is: $score',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                    fontSize: 25,
-                  ),
+                    const TextSpan(
+                      text: 'score is: ',
+                    ),
+                    TextSpan(
+                      text: score,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
