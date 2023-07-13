@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:quizizz/screens/score_screen.dart';
 import 'package:quizizz/shared/question_widgets.dart';
 
-class QuizScreen extends StatelessWidget {
+class QuizScreen extends StatefulWidget {
   final String data;
 
   const QuizScreen({Key? key, required this.data}) : super(key: key);
 
+  @override
+  State<QuizScreen> createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final appSize = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(data),
+        leadingWidth: 70,
+        leading: Center(
+          child: Text(
+            widget.data,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        title: Column(
+          children: const [Text('Question No:'), Text('1/5')],
+        ),
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Image.asset(
-              'assets/images/logo.png',
-              height: appSize.height * 0.2,
-              width: appSize.width * 0.2,
-            ),
+        actions: const [
+          Icon(
+            Icons.quiz_rounded,
+            size: 35,
           ),
         ],
       ),
@@ -33,35 +41,9 @@ class QuizScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const QuestionWidget(
+          children: const [
+            QuestionWidget(
               question: 'The Olympics are held every how many years',
-            ),
-            const Spacer(),
-            SizedBox(
-              width: appSize.width * 1 / 3,
-              height: 45,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ScorePage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-                child: Text(
-                  'Submit',
-                  style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
             ),
           ],
         ),

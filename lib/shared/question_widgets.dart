@@ -28,13 +28,13 @@ class QuestionWidget extends StatelessWidget {
               choice: '1 Time',
             ),
             AnswersButton(
-              choice: '2 Time',
+              choice: '2 Times',
             ),
             AnswersButton(
-              choice: '3 Time',
+              choice: '3 Times',
             ),
             AnswersButton(
-              choice: '4 Time',
+              choice: '4 Times',
             ),
           ],
         ),

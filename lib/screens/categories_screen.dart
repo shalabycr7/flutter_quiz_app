@@ -20,7 +20,7 @@ class CategoriesPage extends StatelessWidget {
             ),
             CategoryContainer(
               imagePath: 'assets/images/general_panel.jpg',
-              title: 'General Knowledge',
+              title: 'General',
             ),
           ],
         ),

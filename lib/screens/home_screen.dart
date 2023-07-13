@@ -60,7 +60,7 @@ class MyHomePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => MyLoginPage(),
+                          builder: (context) => const MyLoginPage(),
                         ),
                       );
                     },

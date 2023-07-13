@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizizz/global/round_button_decoration.dart';
 
 import 'categories_screen.dart';
 
@@ -37,7 +38,7 @@ class ScorePage extends StatelessWidget {
               text: TextSpan(
                 text: 'Hello ',
                 style: const TextStyle(
-                  color: Color.fromARGB(255, 215, 215, 215),
+                  color: Colors.white,
                   fontSize: 20,
                 ),
                 children: <TextSpan>[
@@ -45,7 +46,7 @@ class ScorePage extends StatelessWidget {
                     text: user,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.white70,
                       fontSize: 20,
                     ),
                   ),
@@ -59,7 +60,7 @@ class ScorePage extends StatelessWidget {
                     text: score,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.white70,
                       fontSize: 20,
                     ),
                   ),
@@ -78,17 +79,12 @@ class ScorePage extends StatelessWidget {
                         builder: (context) => const CategoriesPage()),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
+                style: roundButtonDecor(Colors.white),
                 child: Text(
                   'Reset Quiz',
                   style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                    ),
+                    textStyle:
+                        const TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ),
               ),

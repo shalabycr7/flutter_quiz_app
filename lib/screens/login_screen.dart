@@ -3,8 +3,14 @@ import 'package:quizizz/global/gradient_decoration.dart';
 import 'package:quizizz/global/round_button_decoration.dart';
 import 'package:quizizz/screens/categories_screen.dart';
 
-class MyLoginPage extends StatelessWidget {
-  MyLoginPage({Key? key}) : super(key: key);
+class MyLoginPage extends StatefulWidget {
+  const MyLoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<MyLoginPage> createState() => _MyLoginPageState();
+}
+
+class _MyLoginPageState extends State<MyLoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -77,6 +83,7 @@ class MyLoginPage extends StatelessWidget {
                           } else if (!value[0].contains(RegExp(r'[A-Z]'))) {
                             return "First character in username must be uppercase ";
                           }
+                          return null;
                         },
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.person),
