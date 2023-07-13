@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizizz/screens/quiz_screen.dart';
 
-class CategoryCont extends StatelessWidget {
-  String imagePath;
-  String title;
+class CategoryContainer extends StatelessWidget {
+  final String imagePath;
+  final String title;
 
-  CategoryCont({super.key, required this.imagePath, required this.title});
+  const CategoryContainer({
+    Key? key,
+    required this.imagePath,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +38,10 @@ class CategoryCont extends StatelessWidget {
               title,
               style: GoogleFonts.roboto(
                 textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

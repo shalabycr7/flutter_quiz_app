@@ -4,8 +4,12 @@ import 'package:quizizz/global/questions_title_style.dart';
 import 'package:quizizz/shared/answers_widgets.dart';
 
 class QuestionWidget extends StatelessWidget {
-  String question;
-  QuestionWidget({super.key, required this.question});
+  final String question;
+
+  const QuestionWidget({
+    Key? key,
+    required this.question,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +23,17 @@ class QuestionWidget extends StatelessWidget {
         ),
         const Divider(),
         Column(
-          children: [
-            AnswersButtons(
+          children: const [
+            AnswersButton(
               choice: '1 Time',
             ),
-            AnswersButtons(
+            AnswersButton(
               choice: '2 Time',
             ),
-            AnswersButtons(
+            AnswersButton(
               choice: '3 Time',
             ),
-            AnswersButtons(
+            AnswersButton(
               choice: '4 Time',
             ),
           ],

@@ -8,43 +8,37 @@ class MyLoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
-    return SafeArea(
-      child: Scaffold(
-        body: SizedBox(
-          height: size.height,
-          width: size.width,
+    return Scaffold(
+      body: DecoratedBox(
+        decoration: blueGradient,
+        child: SafeArea(
           child: Stack(
             alignment: AlignmentDirectional.bottomCenter,
             children: [
-              Container(
-                height: size.height,
-                width: size.width,
-                decoration: blueGradient,
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      bottom: size.height * 1 / 20,
-                      left: 20,
-                      right: 20,
-                      top: size.height * 1 / 20,
-                    ),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          "assets/images/logo.png",
-                          height: size.height * 0.1,
-                          width: size.width * 0.3,
-                        ),
-                        const Icon(
-                          Icons.fact_check_rounded,
-                          size: 80,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: size.height * 1 / 20,
+                    left: 20,
+                    right: 20,
+                    top: size.height * 1 / 20,
+                  ),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        "assets/images/logo.png",
+                        height: size.height * 0.1,
+                        width: size.width * 0.3,
+                      ),
+                      const Icon(
+                        Icons.fact_check_rounded,
+                        size: 80,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -54,7 +48,6 @@ class MyLoginPage extends StatelessWidget {
                   vertical: 20,
                 ),
                 height: size.height * 2 / 3,
-                width: size.width,
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(

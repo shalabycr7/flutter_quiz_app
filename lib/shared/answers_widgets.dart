@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quizizz/global/round_button_decoration.dart';
 
-class AnswersButtons extends StatelessWidget {
-  String choice;
-  AnswersButtons({super.key, required this.choice});
+class AnswersButton extends StatelessWidget {
+  final String choice;
+
+  const AnswersButton({Key? key, required this.choice}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

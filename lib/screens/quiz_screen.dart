@@ -4,26 +4,25 @@ import 'package:quizizz/screens/score_screen.dart';
 import 'package:quizizz/shared/question_widgets.dart';
 
 class QuizScreen extends StatelessWidget {
-  String data;
+  final String data;
 
-  QuizScreen({super.key, required this.data});
+  const QuizScreen({Key? key, required this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var appSize = MediaQuery.of(context).size;
+    final appSize = MediaQuery.of(context).size;
 
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(data),
         centerTitle: true,
-        actions: <Widget>[
+        actions: [
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Image.asset(
               'assets/images/logo.png',
-              height: MediaQuery.of(context).size.height * 0.2,
-              width: MediaQuery.of(context).size.width * 0.2,
+              height: appSize.height * 0.2,
+              width: appSize.width * 0.2,
             ),
           ),
         ],
@@ -35,7 +34,7 @@ class QuizScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            QuestionWidget(
+            const QuestionWidget(
               question: 'The Olympics are held every how many years',
             ),
             const Spacer(),
@@ -67,6 +66,6 @@ class QuizScreen extends StatelessWidget {
           ],
         ),
       ),
-    ));
+    );
   }
 }

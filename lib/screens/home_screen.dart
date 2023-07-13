@@ -5,17 +5,16 @@ import 'package:quizizz/global/round_button_decoration.dart';
 import 'package:quizizz/screens/login_screen.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-          width: size.width,
-          height: size.height,
-          decoration: blueGradient,
+
+    return Scaffold(
+      body: DecoratedBox(
+        decoration: blueGradient,
+        child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -32,9 +31,10 @@ class MyHomePage extends StatelessWidget {
                 'ITI Quiz App',
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -42,31 +42,37 @@ class MyHomePage extends StatelessWidget {
                 'We enjoy spreading knowledge',
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const Spacer(),
-              Container(
-                margin:
+              Padding(
+                padding:
                     const EdgeInsets.symmetric(horizontal: 75, vertical: 30),
-                width: double.infinity,
-                height: 45,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MyLoginPage()),
-                    );
-                  },
-                  style: roundButtonDecor(Colors.white),
-                  child: Text(
-                    'Start',
-                    style: GoogleFonts.roboto(
-                      textStyle:
-                          const TextStyle(fontSize: 22, color: Colors.black),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 45,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MyLoginPage(),
+                        ),
+                      );
+                    },
+                    style: roundButtonDecor(Colors.white),
+                    child: Text(
+                      'Start',
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.black,
+                        ),
+                      ),
                     ),
                   ),
                 ),
