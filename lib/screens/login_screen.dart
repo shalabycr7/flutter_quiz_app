@@ -4,7 +4,8 @@ import 'package:quizizz/global/round_button_decoration.dart';
 import 'package:quizizz/screens/categories_screen.dart';
 
 class MyLoginPage extends StatelessWidget {
-  const MyLoginPage({Key? key}) : super(key: key);
+  MyLoginPage({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -54,94 +55,108 @@ class MyLoginPage extends StatelessWidget {
                     top: Radius.circular(50),
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 40,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    TextField(
-                      decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.person),
-                        hintText: "Username",
-                        filled: true,
-                        fillColor: Colors.white,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Login",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40,
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        const Spacer(),
-                        const Text("New to quizizz?"),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text("Register"),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      width: size.width / 2 - 60,
-                      height: 45,
-                      child: ElevatedButton(
-                        style: roundButtonDecor(Colors.blue),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const CategoriesPage(),
-                            ),
-                          );
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Username can not be empty';
+                          } else if (value.length < 9) {
+                            return "Username must be more than 9 chracters";
+                          } else if (!value[0].contains(RegExp(r'[A-Z]'))) {
+                            return "First character in username must be uppercase ";
+                          }
                         },
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.person),
+                          hintText: "Username",
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 35),
-                    const Icon(
-                      Icons.fingerprint,
-                      size: 70,
-                      color: Colors.blue,
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      "Use Touch ID",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: true,
-                              onChanged: (value) {},
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          const Spacer(),
+                          const Text("New to quizizz?"),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text("Register"),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      SizedBox(
+                        width: size.width / 2 - 60,
+                        height: 45,
+                        child: ElevatedButton(
+                          style: roundButtonDecor(Colors.blue),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CategoriesPage(),
+                                ),
+                              );
+                            }
+                          },
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
                             ),
-                            const Text("Remember me"),
-                          ],
+                          ),
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text("Forget Password?"),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(height: 35),
+                      const Icon(
+                        Icons.fingerprint,
+                        size: 70,
+                        color: Colors.blue,
+                      ),
+                      const SizedBox(height: 12),
+                      const Text(
+                        "Use Touch ID",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: true,
+                                onChanged: (value) {},
+                              ),
+                              const Text("Remember me"),
+                            ],
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text("Forget Password?"),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
