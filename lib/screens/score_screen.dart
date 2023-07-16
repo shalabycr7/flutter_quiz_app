@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quizizz/global/round_button_decoration.dart';
+import 'package:quizizz/screens/login_screen.dart';
 
 import 'categories_screen.dart';
 
 class ScorePage extends StatelessWidget {
-  const ScorePage({super.key});
+  final int index;
+  final int score;
+  const ScorePage({super.key, required this.index, required this.score});
 
   @override
   Widget build(BuildContext context) {
     var appSize = MediaQuery.of(context).size;
 
-    var user = 'Ahmed';
-    var score = '1/10';
+    var user = usernameController.text;
 
     return Scaffold(
       body: Container(
@@ -57,7 +59,7 @@ class ScorePage extends StatelessWidget {
                     text: 'score is: ',
                   ),
                   TextSpan(
-                    text: score,
+                    text: '$score/${index + 1}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white70,

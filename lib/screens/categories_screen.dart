@@ -9,10 +9,10 @@ class CategoriesPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: const [
+          children: [
             CategoryContainer(
               imagePath: 'assets/images/sports.jpg',
-              title: 'Sports',
+              title: 'Biology',
             ),
             CategoryContainer(
               imagePath: 'assets/images/history_panel.jpg',
@@ -20,7 +20,7 @@ class CategoriesPage extends StatelessWidget {
             ),
             CategoryContainer(
               imagePath: 'assets/images/general_panel.jpg',
-              title: 'General',
+              title: 'Maths',
             ),
           ],
         ),

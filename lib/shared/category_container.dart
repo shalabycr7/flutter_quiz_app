@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizizz/global/global_data.dart';
 import 'package:quizizz/screens/quiz_screen.dart';
 
 class CategoryContainer extends StatelessWidget {
   final String imagePath;
   final String title;
+  final Map<String, List<dynamic>> qlist = {
+    'Biology': biologyTest,
+    'History': historyTest,
+    'Maths': mathsTest
+  };
 
-  const CategoryContainer({
+  CategoryContainer({
     Key? key,
     required this.imagePath,
     required this.title,
@@ -19,7 +25,11 @@ class CategoryContainer extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => QuizScreen(data: title)),
+            MaterialPageRoute(
+                builder: (context) => QuizScreen(
+                      data: title,
+                      questionsList: qlist[title] as List,
+                    )),
           );
         },
         child: Container(

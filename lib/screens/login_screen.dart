@@ -3,6 +3,8 @@ import 'package:quizizz/global/gradient_decoration.dart';
 import 'package:quizizz/global/round_button_decoration.dart';
 import 'package:quizizz/screens/categories_screen.dart';
 
+TextEditingController usernameController = TextEditingController();
+
 class MyLoginPage extends StatefulWidget {
   const MyLoginPage({Key? key}) : super(key: key);
 
@@ -75,6 +77,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
+                        controller: usernameController,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Username can not be empty';
